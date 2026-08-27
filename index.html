@@ -153,10 +153,14 @@
   .callout .k{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:6px}
   .callout p{font-size:1.02rem}
 
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow-sm)}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow-sm);transition:box-shadow .18s ease,border-color .18s ease}
+  @media (hover:hover){.card:hover{box-shadow:var(--shadow);border-color:var(--border-strong)}}
   .card + .card{margin-top:16px}
-  .card h3{margin-bottom:7px}
+  .card h3{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+  .card h3::before{content:"";width:16px;height:3px;border-radius:2px;background:var(--accent);flex:none}
   .card .role{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-muted);letter-spacing:.02em}
+  .records{gap:14px}
+  .records .card h3 + ul.list{margin-top:.8rem;padding-top:.8rem;border-top:1px solid var(--border)}
 
   .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(244px,1fr));gap:16px}
 
@@ -326,9 +330,9 @@
                   <tr><td class="num">2</td><td><a href="#kpi-2">Technical readiness &amp; QC</a></td><td class="num">14</td><td class="num">&ge; 95%</td><td>SRS and finalised technical design reviewed with the team; every feature passes SQA on a dev server (manual + automated pytest) before going live; review, testing, security, reliability and change controls met on the large majority of changes.</td><td class="num">95%+ (suggested)</td></tr>
                   <tr><td class="num">3</td><td><a href="#kpi-3">Value additions &amp; capability</a></td><td class="num">13</td><td class="num">&ge; 2</td><td>Four delivered platforms as value additions; shared software architecture, infrastructure, cloud, deployment, production operations and AI-assisted development with the team, plus code review and mentoring.</td><td class="num">4 / 4 — exceeds</td></tr>
                   <tr><td class="num">4</td><td><a href="#kpi-4">Records &amp; reporting</a></td><td class="num">8</td><td class="num">100%</td><td>Whiteboard + ClickUp sprints, GitHub PRs and reviews, Odoo (PD) reports and work diary, deployment and incident records.</td><td class="num">Maintained &amp; traceable</td></tr>
-                  <tr><td class="num">5</td><td><a href="#kpi-5">Service enhancement &amp; impact</a></td><td class="num">14</td><td class="num">&ge; 90%</td><td>Reliability and incident response, adoption (CPCN first batch), reduced support demand across five projects.</td><td class="num">90%+ (suggested)</td></tr>
+                  <tr><td class="num">5</td><td><a href="#kpi-5">Service enhancement &amp; impact</a></td><td class="num">14</td><td class="num">&ge; 90%</td><td>A target and an outcome set for each of eight service dimensions &mdash; reliability, responsiveness, usability, accuracy, maintainability, adoption, turnaround, reduced support demand &mdash; across five projects.</td><td class="num">90%+ (suggested)</td></tr>
                   <tr><td class="num">6</td><td><a href="#kpi-6">Stakeholder value &amp; feedback</a></td><td class="num">10</td><td class="num">&ge; 4 / 5</td><td>CPCN 100% client satisfaction (Nestl&eacute; Bangladesh); feedback closed within delivery timelines.</td><td class="num">Above target</td></tr>
-                  <tr><td class="num">7</td><td><a href="#kpi-7">Solution deliverables</a></td><td class="num">11</td><td class="num">&ge; 90%</td><td>24 of 26 logged deliverables completed or delivered; 2 continuing in-service by design.</td><td class="num">&asymp; 92% — meets</td></tr>
+                  <tr><td class="num">7</td><td><a href="#kpi-7">Solution deliverables</a></td><td class="num">11</td><td class="num">&ge; 90%</td><td>24 of 26 approved deliverables completed or delivered (92%, above the 90% target); scope, acceptance criteria and timeline held; material changes escalated and approved; 2 continuing in-service by design.</td><td class="num">&asymp; 92% — meets</td></tr>
                 </tbody>
               </table>
             </div>
@@ -658,7 +662,7 @@
         <div class="scorecard">
           <div class="tile"><span class="k">Weightage</span><span class="v">8</span><span class="u">of 80</span></div>
           <div class="tile"><span class="k">Target</span><span class="v">100%</span><span class="u">records current &amp; traceable</span></div>
-          <div class="tile"><span class="k">Reporting</span><span class="v sm">On time — progress · risks · next actions</span></div>
+          <div class="tile"><span class="k">Reporting</span><span class="v sm">Odoo (PD) · ClickUp sprints · daily work diary</span></div>
           <div class="tile"><span class="k">Escalation</span><span class="v sm">&le; 1 working day for critical blockers</span></div>
         </div>
 
@@ -668,8 +672,30 @@
           variances, risks and next actions on time; and escalate critical blockers within one working day.</p>
         </div>
 
+        <h2>How each part of the target is met</h2>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Requirement</th><th>How it is met</th><th>Where</th></tr></thead>
+            <tbody>
+              <tr><td>Complete records</td><td>Seven record categories covering both technical work (architecture, code, APIs, infrastructure, deployment) and service work (support, maintenance, monitoring, incidents).</td><td>Record set</td></tr>
+              <tr><td>Current records</td><td>Kept up to date in the tool where the work happens, as it happens &mdash; not re-keyed later.</td><td>ClickUp · GitHub · Odoo</td></tr>
+              <tr><td>Traceable records</td><td>Every production change links back to its approved requirement and forward to its validation.</td><td>Traceability chain</td></tr>
+              <tr><td>Report progress, outcomes, variances, risks, next actions</td><td>Each is reported through a named channel on a fixed rhythm.</td><td>Reporting cadence</td></tr>
+              <tr><td>On time</td><td>Daily (diary, stand-up), per sprint (ClickUp), per reporting period (Odoo PD), per release (release notes).</td><td>Reporting cadence</td></tr>
+              <tr><td>Escalate critical blockers &le; 1 working day</td><td>Defined trigger, path and owner; raised within one working day of identification and logged.</td><td>Escalation</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <p class="k">Traceability chain</p>
+          <p>Any production change can be traced back to its approved requirement and forward to its validation:<br>
+          <strong>approved requirement &rarr; SRS &rarr; technical design &rarr; ClickUp task (acceptance criteria) &rarr; GitHub PR &amp; review &rarr; SQA test record &rarr; release note &rarr; post-deployment validation.</strong></p>
+        </div>
+
         <h2>Record set maintained</h2>
-        <div class="grid2">
+        <p class="muted" style="font-size:.96rem">Records are kept current in the tool where the work happens &mdash; requirements and tasks in ClickUp, code and reviews in GitHub, reports in Odoo &mdash; not re-keyed into a separate document.</p>
+        <div class="grid2 records">
           <div class="card">
             <h3>Design &amp; specification</h3>
             <ul class="list" style="margin-top:.45rem;font-size:.93rem"><li>System architecture documentation</li><li>API documentation</li><li>Technical specifications</li><li>Project plans and delivery schedules</li></ul>
@@ -700,14 +726,35 @@
           </div>
         </div>
 
-        <h2>Reporting &amp; escalation</h2>
-        <ul class="list">
-          <li>Progress, outcomes, variances and next actions reported on a regular cadence through Odoo (PD), a work diary and whiteboard / ClickUp sprint updates.</li>
-          <li>Reviewed technical progress and delivery status and reported it to project stakeholders.</li>
-          <li>Communicated technical risks, dependencies and next actions.</li>
-          <li>Supported timely decision-making and escalation during critical issues.</li>
-        </ul>
-        <p class="muted" style="font-size:.88rem">Achievement scored on completeness and availability of official documentation.</p>
+        <h2>Reporting cadence</h2>
+        <p class="muted" style="font-size:.96rem">Progress, outcomes, variances, risks and next actions are reported on a set rhythm.</p>
+        <div class="tw">
+          <table>
+            <thead><tr><th>What is reported</th><th>Where</th><th>When</th></tr></thead>
+            <tbody>
+              <tr><td>Task and sprint progress, next actions</td><td>ClickUp sprint board, stand-up</td><td>Each working day / per sprint</td></tr>
+              <tr><td>Work done, blockers, next steps</td><td>Daily work diary</td><td>Daily</td></tr>
+              <tr><td>Progress and performance report</td><td>Odoo (PD)</td><td>Each reporting period</td></tr>
+              <tr><td>Outcomes and variances &mdash; scope, timeline, effort</td><td>ClickUp and stakeholder update</td><td>At each milestone and on any change</td></tr>
+              <tr><td>Risks and dependencies</td><td>ClickUp notes, stakeholder communication</td><td>As soon as identified</td></tr>
+              <tr><td>Release outcome</td><td>Release notes, deployment record</td><td>Per release</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Escalation of critical blockers</h2>
+        <div class="tw">
+          <table>
+            <tbody>
+              <tr><td style="white-space:nowrap"><strong>Counts as critical</strong></td><td>Production down or degraded, a release-blocking defect, a security concern, or an external dependency that stops progress.</td></tr>
+              <tr><td style="white-space:nowrap"><strong>Path</strong></td><td>Raised in ClickUp and directly to the technical lead / stakeholder; an owner and a next action assigned.</td></tr>
+              <tr><td style="white-space:nowrap"><strong>Timeline</strong></td><td>Within one working day of identifying it.</td></tr>
+              <tr><td style="white-space:nowrap"><strong>Recorded in</strong></td><td>ClickUp, the incident record, and the stakeholder thread.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="muted" style="font-size:.88rem">Achievement scored on completeness, currency and traceability of records, timeliness of reporting, and escalation of critical blockers within one working day.</p>
       </section>
 
       <!-- ============ KPI 5 ============ -->
@@ -724,7 +771,7 @@
           <div class="tile"><span class="k">Weightage</span><span class="v">14</span><span class="u">of 80 — joint highest</span></div>
           <div class="tile"><span class="k">Target</span><span class="v">&ge; 90%</span><span class="u">of approved service targets</span></div>
           <div class="tile"><span class="k">Projects</span><span class="v">5</span><span class="u">contributing evidence</span></div>
-          <div class="tile"><span class="k">Status</span><span class="v sm"><span class="chip">Evidence compiled</span></span></div>
+          <div class="tile"><span class="k">Dimensions</span><span class="v">8</span><span class="u">reliability &rarr; reduced support demand</span></div>
         </div>
 
         <div class="callout">
@@ -733,22 +780,23 @@
           usability, accuracy, maintainability, adoption, turnaround or reduced support demand.</p>
         </div>
 
-        <h2>Evidence by measure</h2>
+        <h2>Service targets and outcomes</h2>
+        <p class="muted" style="font-size:.96rem">The approved service targets for the platforms sit under the dimensions below. Each row states the target, the outcome, and the indicator it is measured by.</p>
         <div class="tw">
           <table>
-            <thead><tr><th>Measure</th><th>Evidence</th></tr></thead>
+            <caption>Applies across CPCN, IOU.AC, the e-commerce products, the DIU website and Daffodil Software Ltd. projects. Suggested position: 90%+ of targets met, subject to formal service-impact evidence.</caption>
+            <thead><tr><th>Dimension</th><th>Service target</th><th>Outcome</th><th>Measured by</th></tr></thead>
             <tbody>
-              <tr><td>Reliability</td><td>Maintained service availability and continuity for IOU.AC and CPCN; improved reliability of media processing and delivery; rollback and recovery supported when required.</td></tr>
-              <tr><td>Responsiveness</td><td>Production incident investigation and resolution; support during high-priority technical incidents; post-deployment technical support across all projects, including production go-live support for Daffodil Software Ltd. projects.</td></tr>
-              <tr><td>Usability</td><td>Learner-facing features and academic content delivery implemented and maintained; improvements based on user, academic and business needs.</td></tr>
-              <tr><td>Accuracy</td><td>SQA testing on a development server with representative data before every release (manual plus automated pytest); post-deployment validation and release verification; post-release issue verification on the DIU website.</td></tr>
-              <tr><td>Maintainability</td><td>Reusable technical approaches; supported platform stability, maintainability and scalability.</td></tr>
-              <tr><td>Adoption</td><td>CPCN supported the successful completion of the first program batch; IOU.AC delivered structured online learning at scale for an international university.</td></tr>
-              <tr><td>Turnaround</td><td>Standardized release process and deployment troubleshooting shortened time to deploy fixes and changes.</td></tr>
-              <tr><td>Reduced support demand</td><td>Bug fixing and troubleshooting on the DIU website and e-commerce products reduced recurring production issues.</td></tr>
+              <tr><td>Reliability</td><td>Platform stays available; media processing and delivery succeed; the service recovers from failure.</td><td>Availability and continuity maintained for IOU.AC and CPCN; the streaming pipeline retries failed jobs automatically; a rollback path on every release.</td><td>Uptime, failed-job rate, incident count</td></tr>
+              <tr><td>Responsiveness</td><td>Production issues are investigated and resolved quickly; support requests are answered promptly.</td><td>Incident investigation and resolution across all projects; support during high-priority incidents; post-deployment support, including go-live support for Daffodil Software Ltd. projects.</td><td>Time to acknowledge and resolve, incident MTTR</td></tr>
+              <tr><td>Usability</td><td>Learner- and user-facing features are clear and work as intended.</td><td>Learner-facing features and academic content delivery built and maintained; adaptive video keeps lessons playing on weak connections.</td><td>User feedback, playback success, usability tickets</td></tr>
+              <tr><td>Accuracy</td><td>Releases behave as specified; no regressions reach production.</td><td>SQA testing on the dev server with representative data before every release (manual + pytest); post-deployment validation; post-release verification on the DIU website.</td><td>Pre-release vs post-release defects, validation pass rate</td></tr>
+              <tr><td>Maintainability</td><td>The codebase stays safe and quick to change.</td><td>Modular service boundaries (LMS / streaming / storage) over documented APIs; reusable patterns; automated backend tests.</td><td>Change lead time, review findings, rework rate</td></tr>
+              <tr><td>Adoption</td><td>Platforms are taken up and used for real programmes.</td><td>CPCN supported the successful completion of the first programme batch; IOU.AC delivers structured online learning at scale for an international university.</td><td>Active users, courses / lessons delivered, batch completion</td></tr>
+              <tr><td>Turnaround</td><td>Fixes and changes reach production quickly and safely.</td><td>Standardised release process shortened time to deploy a change; a release now goes out in well under an hour from a checklist.</td><td>Release preparation time, change frequency</td></tr>
+              <tr><td>Reduced support demand</td><td>Fewer recurring production issues over time.</td><td>Bug fixing and troubleshooting on the DIU website and e-commerce products; automatic failed-job recovery removed a class of manual work.</td><td>Ticket volume trend, repeat-issue rate</td></tr>
             </tbody>
           </table>
-          <caption>Suggested achievement 90%+, subject to formal service-impact evidence.</caption>
         </div>
       </section>
 
@@ -820,6 +868,26 @@
           standards and timeline, with timely escalation and approval of material changes.</p>
         </div>
 
+        <div class="callout">
+          <p class="k">Completion against target</p>
+          <p><strong>24 of 26 approved deliverables completed or delivered &mdash; 92%</strong>, above the 90% target. The two &ldquo;continuing&rdquo; items (ongoing technical improvements on IOU.AC; DIU website post-deployment support) are in-service commitments by design, tracked and reported &mdash; not open or overdue.</p>
+        </div>
+
+        <h2>How each part of the target is met</h2>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Requirement</th><th>How it is met</th><th>Evidence</th></tr></thead>
+            <tbody>
+              <tr><td>&ge; 90% of approved deliverables completed</td><td>24 of 26 completed or delivered &mdash; 92%.</td><td>Deliverables table below</td></tr>
+              <tr><td>Within agreed scope</td><td>Each deliverable traces to an approved requirement / SRS; scope additions were raised as separate, approved items.</td><td>SRS, ClickUp epics, change records</td></tr>
+              <tr><td>Acceptance criteria met</td><td>Built against the acceptance criteria in the SRS / ClickUp task and verified by SQA before release.</td><td>ClickUp tasks, SQA test records</td></tr>
+              <tr><td>Technical standards met</td><td>Passed the review, testing, security, reliability and change controls (KPI 2).</td><td>GitHub PR history, pytest and SQA records, release notes</td></tr>
+              <tr><td>Within timeline</td><td>Delivered within the agreed project timelines.</td><td>Project plans, delivery schedules, release records</td></tr>
+              <tr><td>Material changes escalated and approved</td><td>Scope or design changes raised with stakeholders and approved before proceeding; critical blockers escalated within one working day (KPI 4).</td><td>Change / approval records, stakeholder threads</td></tr>
+            </tbody>
+          </table>
+        </div>
+
         <h2>Major delivered solutions</h2>
         <div class="tw">
           <table>
@@ -860,8 +928,11 @@
         <h2>Governance &amp; accountability</h2>
         <ul class="list">
           <li>Projects delivered within the agreed project timelines.</li>
-          <li>Material changes escalated and coordinated for approval with project stakeholders.</li>
-          <li>Only SQA-passed builds promoted to production; post-deployment validation and release verification performed before sign-off.</li>
+          <li>Every deliverable checked against its acceptance criteria; only SQA-passed builds promoted to production.</li>
+          <li>Scope tracked against the approved requirement &mdash; additions or changes raised as a separate, approved item, so there is no silent scope creep.</li>
+          <li>Material design or scope changes escalated to stakeholders and approved before work continued.</li>
+          <li>Post-deployment validation and release verification performed before sign-off.</li>
+          <li>The two &ldquo;continuing&rdquo; deliverables are ongoing service commitments by design &mdash; tracked and reported, not open or overdue.</li>
         </ul>
       </section>
 

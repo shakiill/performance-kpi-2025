@@ -324,7 +324,7 @@
                 <tbody>
                   <tr><td class="num">1</td><td><a href="#kpi-1">Workflow improvements</a></td><td class="num">10</td><td class="num">&ge; 2</td><td>Standardized multi-environment release process; dynamic adaptive-bitrate video streaming microservice (FFmpeg, HLS/DASH, S3, CloudFront) decoupled from the LMS.</td><td class="num">2 / 2 — meets</td></tr>
                   <tr><td class="num">2</td><td><a href="#kpi-2">Technical readiness &amp; QC</a></td><td class="num">14</td><td class="num">&ge; 95%</td><td>SRS and finalised technical design reviewed with the team; every feature passes SQA on a dev server (manual + automated pytest) before going live; review, testing, security, reliability and change controls met on the large majority of changes.</td><td class="num">95%+ (suggested)</td></tr>
-                  <tr><td class="num">3</td><td><a href="#kpi-3">Value additions &amp; capability</a></td><td class="num">13</td><td class="num">&ge; 2</td><td>Four delivered platforms as value additions; code review, mentoring and knowledge transfer across teams.</td><td class="num">4 / 4 — exceeds</td></tr>
+                  <tr><td class="num">3</td><td><a href="#kpi-3">Value additions &amp; capability</a></td><td class="num">13</td><td class="num">&ge; 2</td><td>Four delivered platforms as value additions; shared software architecture, infrastructure, cloud, deployment, production operations and AI-assisted development with the team, plus code review and mentoring.</td><td class="num">4 / 4 — exceeds</td></tr>
                   <tr><td class="num">4</td><td><a href="#kpi-4">Records &amp; reporting</a></td><td class="num">8</td><td class="num">100%</td><td>Whiteboard + ClickUp sprints, GitHub PRs and reviews, Odoo (PD) reports and work diary, deployment and incident records.</td><td class="num">Maintained &amp; traceable</td></tr>
                   <tr><td class="num">5</td><td><a href="#kpi-5">Service enhancement &amp; impact</a></td><td class="num">14</td><td class="num">&ge; 90%</td><td>Reliability and incident response, adoption (CPCN first batch), reduced support demand across five projects.</td><td class="num">90%+ (suggested)</td></tr>
                   <tr><td class="num">6</td><td><a href="#kpi-6">Stakeholder value &amp; feedback</a></td><td class="num">10</td><td class="num">&ge; 4 / 5</td><td>CPCN 100% client satisfaction (Nestl&eacute; Bangladesh); feedback closed within delivery timelines.</td><td class="num">Above target</td></tr>
@@ -577,7 +577,7 @@
           <div class="tile"><span class="k">Weightage</span><span class="v">13</span><span class="u">of 80</span></div>
           <div class="tile"><span class="k">Target</span><span class="v">&ge; 2</span><span class="u">approved value additions</span></div>
           <div class="tile"><span class="k">Submitted</span><span class="v">4</span><span class="u">value additions</span></div>
-          <div class="tile"><span class="k">Status</span><span class="v sm"><span class="chip">Evidence compiled</span></span></div>
+          <div class="tile"><span class="k">Capability</span><span class="v sm">Software architecture &amp; infrastructure knowledge transfer, mentoring and code review</span></div>
         </div>
 
         <div class="callout">
@@ -609,16 +609,40 @@
           <p class="result"><span class="k">Outcome</span>Smooth transition from development to production and continued operation of a high-visibility institutional platform.</p>
         </div>
 
-        <h2>Team capability — review, mentoring &amp; knowledge transfer</h2>
-        <ul class="list">
-          <li>Provided technical guidance to team members throughout the CPCN and IOU.AC projects.</li>
-          <li>Guided implementation approaches and reviewed technical progress and delivery status.</li>
-          <li>Supported code review, debugging and issue resolution across the team.</li>
-          <li>Helped other Daffodil Software Ltd. project teams complete development and take releases live.</li>
-          <li>Improved maintainability through reusable technical approaches carried between projects.</li>
+        <h2>Capability contributions — sharing architecture, infrastructure &amp; engineering practice</h2>
+        <p class="muted" style="font-size:.96rem">Beyond delivery, I worked to raise what the team can do without me &mdash; sharing how the systems are designed and run, and the practices that keep them maintainable. Done through design walk-throughs, code review, written run-books and pairing.</p>
+        <div class="tw">
+          <table>
+            <caption>Shared across the CPCN, IOU.AC and Daffodil Software Ltd. teams.</caption>
+            <thead><tr><th>Area</th><th>What was shared</th><th>How</th></tr></thead>
+            <tbody>
+              <tr><td>Software architecture</td><td>How the platform is broken into services and why &mdash; the LMS, the streaming service and media storage as separate parts integrated over documented APIs; data modelling, API contract design, and applying patterns consistently so the design stays modular and testable.</td><td>Design documents; design walk-throughs; code review.</td></tr>
+              <tr><td>Infrastructure &amp; environments</td><td>Server provisioning and configuration, reverse-proxy and TLS, dev / staging / production separation, managed environment variables and secrets, and safe access practices.</td><td>Setup run-books; pairing on first setups.</td></tr>
+              <tr><td>Cloud &amp; content delivery</td><td>Amazon S3 bucket layout and access policy, CloudFront distribution and cache behaviour, and how the streaming service publishes to them.</td><td>Config walk-throughs; documented settings.</td></tr>
+              <tr><td>Deployment &amp; release</td><td>The standard release process &mdash; deployment checklist, environment configuration, coordinated releases, rollback and recovery.</td><td>Checklist; shadowed releases.</td></tr>
+              <tr><td>Production operations</td><td>Reading logs and monitoring, triaging incidents, first-response steps, when and how to roll back, and how to escalate.</td><td>Incident walk-throughs; on-call guidance.</td></tr>
+              <tr><td>Backend &amp; API practice</td><td>Service integration, error handling and retries, and writing automated backend tests with pytest.</td><td>Code review; worked examples in the codebase.</td></tr>
+              <tr><td>AI-assisted development</td><td>Bringing AI coding tools into the workflow &mdash; effective prompting, keeping changes small and reviewable, verifying generated code, and never sharing secrets or sensitive data with a tool.</td><td>Team session; review standards.</td></tr>
+              <tr><td>Code review</td><td>What a good pull request and review looks like; a review checklist tied to the quality gate (KPI 2).</td><td>PR template; ongoing review feedback.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin-top:1.4rem">Also</h3>
+        <ul class="list" style="margin-top:.5rem">
+          <li>Reusable technical approaches carried between projects to reduce rework.</li>
           <li>Coordinated technical work across development, deployment, infrastructure, media and project stakeholders.</li>
         </ul>
-        <p class="muted" style="font-size:.88rem">Suggested achievement 4 / 4, subject to the approved KPI target and available evidence.</p>
+
+        <h3 style="margin-top:1.4rem">Evidence</h3>
+        <ul class="list" style="margin-top:.5rem">
+          <li>Architecture and design documents; recorded design decisions.</li>
+          <li>Setup run-books and configuration documents.</li>
+          <li>Code-review history in GitHub; PR template and review checklist.</li>
+          <li>Session notes and knowledge-base items in ClickUp.</li>
+        </ul>
+
+        <p class="muted" style="font-size:.88rem">Value additions: 4 against a target of 2. Capability contributions documented across architecture, infrastructure, delivery and engineering-practice areas &mdash; subject to the approved KPI target and available evidence.</p>
       </section>
 
       <!-- ============ KPI 4 ============ -->
